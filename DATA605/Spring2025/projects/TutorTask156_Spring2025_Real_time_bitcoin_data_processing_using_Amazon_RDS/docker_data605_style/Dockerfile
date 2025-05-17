@@ -53,6 +53,7 @@ ADD etc_sudoers_copy /install/etc_sudoers
 COPY etc_sudoers_copy /etc/sudoers
 COPY bashrc_copy /root/.bashrc
 
+
 # Report package versions.
 ADD version.sh /install/
 RUN /install/version.sh 2>&1 | tee version.log

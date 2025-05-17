@@ -1,3 +1,4 @@
+
 # Bitcoin RDS - Real-Time Bitcoin Data Processing using Amazon RDS
 
 This project demonstrates real-time Bitcoin price data processing using Amazon RDS for storage and analysis.
@@ -207,4 +208,3 @@ After running the notebook, you should see:
 - **Database connection issues**: Verify your RDS credentials in the `.env` file
 - **Docker build failures**: Ensure Docker is properly installed and running
 - **Port conflicts**: If ports 8888 or 8080 are in use, modify the port settings in the Docker scripts
-

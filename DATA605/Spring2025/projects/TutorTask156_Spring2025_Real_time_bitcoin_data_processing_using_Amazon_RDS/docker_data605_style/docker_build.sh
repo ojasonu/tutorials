@@ -18,3 +18,4 @@ docker build -t $FULL_IMAGE_NAME .
 echo "Build complete. You can now run:"
 echo "  ./docker_jupyter.sh   # For Jupyter Notebook"
 echo "  ./docker_bash.sh      # For bash shell"
+

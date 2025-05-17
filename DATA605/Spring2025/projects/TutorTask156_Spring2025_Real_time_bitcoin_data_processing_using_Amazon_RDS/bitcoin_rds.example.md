@@ -1,5 +1,4 @@
 <!-- toc -->
-
 - [Real-time Bitcoin Data Analysis using Amazon RDS](#real-time-bitcoin-data-analysis-using-amazon-rds)
   * [Introduction](#introduction)
   * [System Architecture](#system-architecture)

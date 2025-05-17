@@ -22,3 +22,4 @@ docker run --rm -it \
     -v $PROJECT_DIR:/project \
     $FULL_IMAGE_NAME \
     /bin/bash
+

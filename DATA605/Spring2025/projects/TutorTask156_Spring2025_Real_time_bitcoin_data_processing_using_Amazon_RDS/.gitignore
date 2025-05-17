@@ -3,7 +3,6 @@ aws/*
 
 # But don't ignore the folder itself
 !aws/.gitkeep
-
 # Ignore environment variables file with credentials
 # .env
 
@@ -15,3 +14,4 @@ helpers_root/**/*.pyc
 
 *.pyc
 logs.log
+
