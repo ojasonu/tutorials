@@ -26,9 +26,9 @@ import time
 import functools
 
 
-# -----------------------------------------------------------------------------
+
 # Logging
-# -----------------------------------------------------------------------------
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,9 +37,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# -----------------------------------------------------------------------------
+
 # Configuration
-# -----------------------------------------------------------------------------
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -76,7 +76,7 @@ API_CONFIG = {
 # Create a global connection pool (initialized once)
 _connection_pool = None
 
-# -----------------------------------------------------------------------------
+
 # Database Connection Functions
 # -----------------------------------------------------------------------------
 
@@ -294,7 +294,7 @@ def add_unique_constraint_to_raw_table():
             release_db_connection(conn)
 
 
-# -----------------------------------------------------------------------------
+
 # Bitcoin Data Functions
 # -----------------------------------------------------------------------------
 
@@ -409,7 +409,7 @@ def fetch_and_store_bitcoin_data():
     return record_id
 
 
-# -----------------------------------------------------------------------------
+
 # Time Series Analysis Functions
 # -----------------------------------------------------------------------------
 
@@ -689,7 +689,7 @@ def fetch_and_store_historical_bitcoin_data(days=30):
     return records_inserted
 
 
-# -----------------------------------------------------------------------------
+
 # Data Analysis Functions
 # -----------------------------------------------------------------------------
 

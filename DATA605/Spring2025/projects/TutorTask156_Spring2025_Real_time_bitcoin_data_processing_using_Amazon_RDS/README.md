@@ -8,6 +8,50 @@ This project demonstrates real-time Bitcoin price data processing using Amazon R
 - Docker installed on your system
 - Docker Compose installed
 - An Amazon RDS PostgreSQL database instance
+
+## Project Overview
+
+This project integrates real-time Bitcoin data with Amazon RDS for storage and analysis. The implementation follows these key steps:
+
+1. **Setting up Amazon RDS**: Configuring a PostgreSQL database instance on AWS with appropriate security groups and parameters.
+
+2. **Database Design**: Creating optimized schema with tables for raw Bitcoin price data and hourly aggregated data.
+
+3. **Data Ingestion**: Using Python to fetch real-time and historical Bitcoin data from the CoinGecko API and storing it in RDS.
+
+4. **SQL Implementation**: Utilizing SQL queries for data manipulation, including creating tables with proper indexes, inserting real-time data, aggregating raw data into hourly summaries, and extracting time-series data for analysis.
+
+   **Example SQL:**
+   ```sql
+   -- Create table for raw Bitcoin data
+   CREATE TABLE raw_bitcoin_prices (
+       id SERIAL PRIMARY KEY,
+       timestamp TIMESTAMP NOT NULL,
+       price_usd NUMERIC(20,8) NOT NULL,
+       volume_usd NUMERIC(24,2),
+       market_cap_usd NUMERIC(24,2)
+   );
+   
+   -- Insert data example
+   INSERT INTO raw_bitcoin_prices (timestamp, price_usd, volume_usd) 
+   VALUES ('2023-04-15 14:30:00', 29876.45, 28145932.67);
+   
+   -- Query hourly aggregated data
+   SELECT date_trunc('hour', timestamp) AS hour,
+          AVG(price_usd) AS avg_price,
+          MAX(price_usd) AS high_price,
+          MIN(price_usd) AS low_price
+   FROM raw_bitcoin_prices
+   GROUP BY hour
+   ORDER BY hour DESC;
+   ```
+
+5. **Time Series Analysis**: Implementing analytical techniques to identify trends, calculate technical indicators (RSI, moving averages), and detect patterns in price movements.
+
+6. **Visualization**: Creating an interactive Streamlit dashboard to display real-time prices, historical trends, and analytical insights.
+
+The project demonstrates how to leverage Amazon RDS as a managed database service for financial data processing and analysis.
+
 ## Usage
 
 1. **Jupyter notebooks**:
